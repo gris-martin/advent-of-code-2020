@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "2: Toboggan",
+            "name": "Day 2: Toboggan",
             "type": "python",
             "request": "launch",
-            "program": "2/toboggan.py",
-            "args": ["2/input"],
+            "program": "Day 2/toboggan.py",
+            "args": ["Day 2/input"],
             "console": "integratedTerminal"
         }
     ]
