@@ -11,6 +11,14 @@
             "program": "Day 2/toboggan.py",
             "args": ["Day 2/input"],
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Day 3: Toboggan",
+            "type": "python",
+            "request": "launch",
+            "program": "Day 3/toboggan.py",
+            "args": ["Day 3/input"],
+            "console": "integratedTerminal"
         }
     ]
 }
