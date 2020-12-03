@@ -2,17 +2,17 @@ import sys
 from typing import List
 
 def test_slope(rows: List[str], right: int, down: int) -> int:
-    x_pos = right
-    y_pos = down
+    x = right
+    y = down
     trees = 0
     width = len(rows[0].strip())
-    y_end = len(rows)
-    while y_pos < y_end:
-        row = rows[y_pos]
-        if row[x_pos % width] == '#':
+    height = len(rows)
+    while y < height:
+        row = rows[y]
+        if row[x % width] == '#':
             trees += 1
-        y_pos += down
-        x_pos += right
+        y += down
+        x += right
     return trees
 
 with open(sys.argv[1], 'r') as f:
