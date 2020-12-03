@@ -1,16 +1,11 @@
 import sys
+from typing import List
 
-right = 3
-down = 1
-
-trees = 0
-
-x_pos = right
-y_pos = down
-
-with open(sys.argv[1], 'r') as f:
-    rows = f.readlines()
-    width = len(rows[0]) - 1  # Don't count last newline character
+def test_slope(rows: List[str], right: int, down: int) -> int:
+    x_pos = right
+    y_pos = down
+    trees = 0
+    width = len(rows[0].strip())
     y_end = len(rows)
     while y_pos < y_end:
         row = rows[y_pos]
@@ -18,5 +13,16 @@ with open(sys.argv[1], 'r') as f:
             trees += 1
         y_pos += down
         x_pos += right
+    return trees
 
-print(f"Number of trees hit: {trees}")
+with open(sys.argv[1], 'r') as f:
+    rows = f.readlines()
+
+    # Part 1
+    print(f"Part 1: {test_slope(rows, 3, 1)}")
+
+    # Part 2
+    trees = 1
+    for slope in [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]:
+        trees *= test_slope(rows, *slope)
+    print(f"Part 2: {trees}")
