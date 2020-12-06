@@ -89,7 +89,7 @@ def check_passport_2(passport: str) -> bool:
 
     # Check passport ID (pid)
     pid = attributes["pid"]
-    pid_match = re.match(r"\d{9}", pid)
+    pid_match = re.match(r"^\d{9}$", pid)
     if pid_match is None:
         return False
 
